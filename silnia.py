@@ -17,7 +17,7 @@ while True:
     user_input = input('What do u want to do? [F] Factorial, [P], Power, [Q] to Quit: ')
     for i in user_input:
         if i in '1234567890':
-            print('Instert the letter')
+            print('Type in the letter')
             break
         else:
             if user_input.lower() == 'q':
@@ -26,13 +26,13 @@ while True:
                     for (key, value) in dict_factorial.items():
                         print('{}! is {}'.format(key, value))
                 else:
-                    print("No factorials were calculated")
+                    print("No factorials were found!")
                 if dict_power: 
                     print('Powers:')
                     for (key, value) in dict_power.items():
                         print('{}^{} is {}'.format(key[0],key[3],value))
                 else:
-                    print("No powers were calculated")
+                    print("No powers were found!")
                 exit()
                     
             elif user_input.lower() == 'f':
@@ -47,7 +47,7 @@ while True:
                         dict_factorial.update({int(user_input_factorial): result_factorial})
 
             elif user_input.lower() == 'p':
-                user_input_power = input("Enter a base of the power: ")
+                user_input_power = input("Enter a base of the power: ") 
                 user_input_power_exponent = input("Enter an exponent: ")
                 for i in user_input_power_exponent and user_input_power:
                     if i not in '0123456789':
