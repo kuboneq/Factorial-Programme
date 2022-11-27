@@ -1,15 +1,20 @@
-def factorial(x:int) -> int:
-    if x <= 1:
-        return 1
-    else:
-        return x * factorial(x - 1)
+class Math:
+    @classmethod
+    def factorial(cls, x:int) -> int:
+        if x <= 1:
+            return 1
+        else:
+            return x * cls.factorial(x - 1)
     
-def power(x:int, n:int) -> int:
-    if n <= 0:
-        return 1
-    else:
-        return x * power(x, n - 1)
     
+    def power(cls, x:int, n:int) -> int:
+        if n <= 0:
+            return 1
+        else:
+            return x * cls.power(x, n - 1)
+
+math = Math()
+
 dict_power = {}
 dict_factorial = {}
 
@@ -42,7 +47,7 @@ while True:
                         print('Invalid value')
                         break
                     else:
-                        result_factorial = factorial(int(user_input_factorial))
+                        result_factorial = math.factorial(int(user_input_factorial))
                         print("The factorial of {}, is equal to {}".format(int(user_input_factorial),result_factorial))
                         dict_factorial.update({int(user_input_factorial): result_factorial})
 
@@ -54,7 +59,7 @@ while True:
                         print('Invalid value')
                         break
                     else:
-                        result_power = power(int(user_input_power), int(user_input_power_exponent))
+                        result_power = math.power(int(user_input_power), int(user_input_power_exponent))
                         print("{} raised to the power of {}, is equal to {}".format(user_input_power, user_input_power_exponent, result_power))
                         dict_power.update({'{}, {}'.format(user_input_power, user_input_power_exponent):result_power})
             else:
